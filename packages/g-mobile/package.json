@@ -52,7 +52,7 @@
     "@antv/util": "~2.0.13",
     "ansi-styles": "^5.0.0",
     "escape-string-regexp": "^4.0.0",
-    "g6-hammerjs": "^0.0.9",
+    "g6-hammerjs": "^0.0.11",
     "gl-matrix": "^3.0.0",
     "supports-color": "^8.1.0",
     "tslib": "^2.0.3"
