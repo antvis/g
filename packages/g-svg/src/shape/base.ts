@@ -57,10 +57,11 @@ class ShapeBase extends AbstractShape implements IShape {
   calculateBBox(): BBox {
     const el = this.get('el');
     let bbox = null;
-    // 包围盒计算依赖于绘制，如果还没有生成对应的 Dom 元素，则包围盒的长宽均为 0
+    // SVG 元素的包围盒计算依赖于绘制，如果生成了对应的 Dom 元素，则使用浏览器的 getBBox API
     if (el) {
       bbox = el.getBBox();
     } else {
+      // 如果还没有生成对应的 Dom 元素，则使用 g-base 中通用的数学方式，计算元素的包围盒
       const bboxMethod = getBBoxMethod(this.get('type'));
       if (bboxMethod) {
         bbox = bboxMethod(this);

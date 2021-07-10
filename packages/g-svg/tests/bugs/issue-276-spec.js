@@ -13,7 +13,7 @@ describe('#276', () => {
     height: 600,
   });
 
-  it.skip('should work correctly when group and shape are not mounted under canvas', () => {
+  it('should work correctly when group and shape are not mounted under canvas', () => {
     const group = new Group({});
     const shape = group.addShape('circle', {
       attrs: {
@@ -27,10 +27,10 @@ describe('#276', () => {
     expect(shape.attr('fill')).eqls('red');
     expect(shape.get('el')).eqls(undefined);
     let bbox = shape.getBBox();
-    expect(bbox.minX).eqls(0);
-    expect(bbox.minY).eqls(0);
-    expect(bbox.maxX).eqls(0);
-    expect(bbox.maxY).eqls(0);
+    expect(bbox.minX).eqls(50);
+    expect(bbox.minY).eqls(50);
+    expect(bbox.maxX).eqls(150);
+    expect(bbox.maxY).eqls(150);
     expect(canvas.getChildren().length).eqls(0);
     // after mounted under canvas
     canvas.add(group);
